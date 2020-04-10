@@ -26,17 +26,21 @@ int main()
     int opcion;
     float primerOperando;
     float segundoOperando;
+    char numeroMenuX[5]="X";
+    char numeroMenuY[5]="Y";
     float resultadoSuma;
     float resultadoResta;
     float resultadoMultiplicacion;
     float resultadoDivision;
     unsigned long long int resultadoFactorial;
 
+
+
     do
     {
         printf("BIENVENIDOS A LA CALCULADORA!!\n\n");
-        printf("1. Ingresar 1er operando (A=x)");
-        printf("\n2. Ingresar 2do operando (B=y)");
+        printf("1. Ingresar 1er operando (A=%s)",numeroMenuX);
+        printf("\n2. Ingresar 2do operando (B=%s)", numeroMenuY);
         printf("\n3. Calcular la suma (A+B)");
         printf("\n4. Calcular la resta (A-B)");
         printf("\n5. Calcular la division (A/B)");
@@ -48,89 +52,115 @@ int main()
         printf("\n\nOpcion elegida:");
         scanf("%d",& opcion);
         system("cls");
-        system ("pause");
+        //system ("pause");
 
         switch(opcion)
         {
             case 1:
                 printf("Ingrese el primer operando: ");
                 scanf("%f",&primerOperando);
+
                 while(validacionNumeros(primerOperando)== 1)
                 {
                     printf("Numero no valido!!, Ingrese otro numero: ");
                     scanf("%f",& primerOperando);
                     validacionNumeros(primerOperando);
                 }
+
+
+                 if ((esEntero(primerOperando)) == 0)
+                    sprintf(numeroMenuX,"%.0f", primerOperando);
+                else
+                    sprintf(numeroMenuX,"%.2f", primerOperando);
+                system("cls");
+
             break;
             case 2:
                 printf("Ingrese el segundo operando: ");
                 scanf("%f",& segundoOperando);
+
                 while(validacionNumeros(segundoOperando)==1)
                 {
                     printf("Numero no valido!!, Ingrese otro numero: ");
                     scanf("%f",& segundoOperando);
                     validacionNumeros(segundoOperando);
                 }
+
+                 if ((esEntero(segundoOperando)) == 0)
+                    sprintf(numeroMenuY,"%.0f", segundoOperando);
+                else
+                    sprintf(numeroMenuY,"%.2f", segundoOperando);
+                system("cls");
             break;
             case 3:
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
 
-                //0 si es par, 1 si es impar;
                 if ((esEntero(resultadoSuma)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoSuma);
+                    printf("El resultado de la suma es: %.0f\n", resultadoSuma);
+
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoSuma);
+                    printf("El resultado de la suma es: %.2f\n", resultadoSuma);
+                system("pause");
+                system("cls");
             break;
             case 4:
                 resultadoResta=restarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoResta)) == 0)
-                    printf("El resultado de la resta es: %.0f", resultadoResta);
+                    printf("El resultado de la resta es: %.0f\n", resultadoResta);
                 else
-                    printf("El resultado de la resta es: %.2f", resultadoResta);
+                    printf("El resultado de la resta es: %.2f\n", resultadoResta);
+                system("pause");
+                system("cls");
             break;
             case 5:
                 resultadoDivision=dividirNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoDivision)) == 0)
-                    printf("El resultado de la division es: %.0f", resultadoDivision);
+                    printf("El resultado de la division es: %.0f\n", resultadoDivision);
                 else
-                    printf("El resultado de la division es: %.2f", resultadoDivision);
+                    printf("El resultado de la division es: %.2f\n", resultadoDivision);
+                system("pause");
+                system("cls");
             break;
             case 6:
                 resultadoMultiplicacion=multiplicarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoMultiplicacion)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoMultiplicacion);
+                    printf("El resultado de la multiplicacion es: %.0f\n", resultadoMultiplicacion);
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoMultiplicacion);
+                    printf("El resultado de la multiplicacion es: %.2f\n", resultadoMultiplicacion);
+                system("pause");
+                system("cls");
             break;
             case 7:
                 resultadoFactorial=factorialNumero(primerOperando);
             break;
             case 8:
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
-                if ((esEntero(resultadoMultiplicacion)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoMultiplicacion);
+                if ((esEntero(resultadoSuma)) == 0)
+                    printf("El resultado de la suma es: %.0f\n", resultadoSuma);
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoMultiplicacion);
+                    printf("El resultado de la suma es: %.2f\n", resultadoSuma);
 
                 resultadoResta=restarNumeros(primerOperando,segundoOperando);
-                if ((esEntero(resultadoMultiplicacion)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoMultiplicacion);
+                if ((esEntero(resultadoResta)) == 0)
+                    printf("El resultado de la resta es: %.0f\n", resultadoResta);
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoMultiplicacion);
+                    printf("El resultado de la resta es: %.2f\n", resultadoResta);
 
                 resultadoDivision=dividirNumeros(primerOperando,segundoOperando);
-                if ((esEntero(resultadoMultiplicacion)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoMultiplicacion);
+                if ((esEntero(resultadoDivision)) == 0)
+                    printf("El resultado de la division es: %.0f\n", resultadoDivision);
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoMultiplicacion);
+                    printf("El resultado de la division es: %.2f\n", resultadoDivision);
 
                 resultadoMultiplicacion=multiplicarNumeros(primerOperando, segundoOperando);
                 if ((esEntero(resultadoMultiplicacion)) == 0)
-                    printf("El resultado de la suma es: %.0f", resultadoMultiplicacion);
+                    printf("El resultado de la multiplicacion es: %.0f\n", resultadoMultiplicacion);
                 else
-                    printf("El resultado de la suma es: %.2f", resultadoMultiplicacion);
+                    printf("El resultado de la multiplicacion es: %.2f\n", resultadoMultiplicacion);
 
                 resultadoFactorial=factorialNumero(primerOperando);
+                system("pause");
+                system("cls");
 
             break;
             case 9:

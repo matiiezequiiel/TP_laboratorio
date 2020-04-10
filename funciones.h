@@ -41,7 +41,7 @@ float multiplicarNumeros(float,float);
 /** \brief Verificar si es un numero entero para la correcta aplicacion de la mascara.
  *
  * \param float numero a verificar
- * \return int 1 si es entero, 2 si no es entero.
+ * \return int 0 si es entero, 1 si no es entero.
  */
 int esEntero(float);
 

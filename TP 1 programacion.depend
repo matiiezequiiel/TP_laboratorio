@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1586482376 source:c:\users\matii\eclipse-workspace\tp 1 programacion\funciones.c
+1586489617 source:c:\users\matii\eclipse-workspace\tp 1 programacion\funciones.c
 	<stdio.h>
 	<stdlib.h>
 
-1586479231 source:c:\users\matii\eclipse-workspace\tp 1 programacion\main.c
+1586489654 source:c:\users\matii\eclipse-workspace\tp 1 programacion\main.c
 	<stdio.h>
 	<stdlib.h>
 	"funciones.h"
 
-1586476991 c:\users\matii\eclipse-workspace\tp 1 programacion\funciones.h
+1586485614 c:\users\matii\eclipse-workspace\tp 1 programacion\funciones.h
 
