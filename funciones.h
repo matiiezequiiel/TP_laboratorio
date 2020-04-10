@@ -1,1 +1,1 @@
-
+int validacionNumeros(int);
