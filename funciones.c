@@ -1,9 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
-int validacionNumeros(float operando)
+int validacionNumeros(char operando)
 {
-    return 0;
+   //VER
+
+
 }
 float sumarNumeros(float primerOperando, float segundoOperando)
 {
@@ -53,7 +56,27 @@ float multiplicarNumeros(float primerOperando, float segundoOperando)
 
     return resultado;
 }
-unsigned long long int factorialNumero(float primerOperando)
+unsigned long long int factorialNumero(int primerOperando)
 {
+     int i;
+     unsigned long long int resultado=1; //ver factorial de 0 y 1
 
+
+
+    for(i=primerOperando;i>1;i--)
+    {
+        if (i==primerOperando)
+        {
+            i--;
+            resultado=primerOperando*i;
+        }
+
+        else
+        {
+            resultado=resultado*i;
+        }
+
+    }
+
+    return resultado;
 }

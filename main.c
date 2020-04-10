@@ -21,6 +21,9 @@ que contenga las funciones para realizar las 4 operaciones.
 • Documentar todas las funciones
 */
 
+
+//FALTA VALIDACION NUMEROS,PREGUNTAR EN FACTORIAL DE QUE OPERANDO QUIERE HACER LA OPERACION Y VERIFICAR QUE PARA LAS OPCIONES ESTEN
+//LOS 2 OPERANDOS CARGADOS.
 int main()
 {
     int opcion;
@@ -33,6 +36,7 @@ int main()
     float resultadoMultiplicacion;
     float resultadoDivision;
     unsigned long long int resultadoFactorial;
+    int auxFactorial;
 
 
 
@@ -59,14 +63,16 @@ int main()
             case 1:
                 printf("Ingrese el primer operando: ");
                 scanf("%f",&primerOperando);
+                sprintf(numeroMenuX,"%f", primerOperando);
 
-                while(validacionNumeros(primerOperando)== 1)
+             /*   while(validacionNumeros(numeroMenuX)== 1)
                 {
                     printf("Numero no valido!!, Ingrese otro numero: ");
                     scanf("%f",& primerOperando);
-                    validacionNumeros(primerOperando);
+                    sprintf(numeroMenuX,"%f", primerOperando);
+                    validacionNumeros(numeroMenuX);
                 }
-
+            */
 
                  if ((esEntero(primerOperando)) == 0)
                     sprintf(numeroMenuX,"%.0f", primerOperando);
@@ -79,12 +85,12 @@ int main()
                 printf("Ingrese el segundo operando: ");
                 scanf("%f",& segundoOperando);
 
-                while(validacionNumeros(segundoOperando)==1)
+/*                while(validacionNumeros(segundoOperando)==1)
                 {
                     printf("Numero no valido!!, Ingrese otro numero: ");
                     scanf("%f",& segundoOperando);
                     validacionNumeros(segundoOperando);
-                }
+                }*/
 
                  if ((esEntero(segundoOperando)) == 0)
                     sprintf(numeroMenuY,"%.0f", segundoOperando);
@@ -131,7 +137,11 @@ int main()
                 system("cls");
             break;
             case 7:
+                auxFactorial=(int)primerOperando;
                 resultadoFactorial=factorialNumero(primerOperando);
+                printf("El resultado de el factorial: %llu\n", resultadoFactorial);
+                system("pause");
+                system("cls");
             break;
             case 8:
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);

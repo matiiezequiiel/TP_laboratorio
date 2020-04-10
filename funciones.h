@@ -3,7 +3,7 @@
  * \param float numero ingresado por el usuario.
  * \return int 1: si el numero es invalido, 0 si es valido.
  */
-int validacionNumeros(float);
+int validacionNumeros(char[]);
 
 /** \brief Suma de 2 numeros.
  *
@@ -51,4 +51,4 @@ int esEntero(float);
  * \return unsigned long long int resultado de el factorial.
  *
  */
-unsigned long long int factorialNumero(float);
+unsigned long long int factorialNumero(int);
