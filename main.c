@@ -29,8 +29,8 @@ int main()
     int opcion;
     float primerOperando;
     float segundoOperando;
-    char numeroMenuX[5]="X";
-    char numeroMenuY[5]="Y";
+    char numeroMenuX[10]="X";
+    char numeroMenuY[10]="Y";
     float resultadoSuma;
     float resultadoResta;
     float resultadoMultiplicacion;
@@ -61,23 +61,22 @@ int main()
         switch(opcion)
         {
             case 1:
-                printf("Ingrese el primer operando: ");
-                scanf("%f",&primerOperando);
-                sprintf(numeroMenuX,"%f", primerOperando);
 
-             /*   while(validacionNumeros(numeroMenuX)== 1)
-                {
-                    printf("Numero no valido!!, Ingrese otro numero: ");
-                    scanf("%f",& primerOperando);
-                    sprintf(numeroMenuX,"%f", primerOperando);
-                    validacionNumeros(numeroMenuX);
-                }
-            */
+                 printf("Ingrese el primer operando: ");
+                 scanf("%s",&numeroMenuX);
 
-                 if ((esEntero(primerOperando)) == 0)
-                    sprintf(numeroMenuX,"%.0f", primerOperando);
-                else
-                    sprintf(numeroMenuX,"%.2f", primerOperando);
+
+                 while(validacionNumeros(numeroMenuX)==1)
+                 {
+                     printf("Numero no valido!!, Ingrese otro numero: ");
+                     scanf("%c",& numeroMenuX);
+                     validacionNumeros(numeroMenuX);
+                 }
+
+                primerOperando=atof(numeroMenuX);
+
+
+
                 system("cls");
 
             break;

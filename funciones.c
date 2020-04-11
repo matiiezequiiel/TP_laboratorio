@@ -2,9 +2,24 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-int validacionNumeros(char operando)
+int validacionNumeros(char* operando)
 {
-   //VER
+     int i;
+     int lenght;
+     lenght=strlen(operando);
+
+     for (i=0;i<lenght;i++)
+    {
+
+              if(isdigit(operando[i])==0) //SI ES 0 ES UN DIGITO INVALIDO (NO ES NUMERO)
+            {
+                if(operando[i]!='.')
+                    return 1;
+            }
+
+
+    }
+    return 0;
 
 
 }

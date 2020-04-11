@@ -1,6 +1,6 @@
 /** \brief Validar numero para el posterior calculo.
  *
- * \param float numero ingresado por el usuario.
+ * \param char numero ingresado por el usuario.
  * \return int 1: si el numero es invalido, 0 si es valido.
  */
 int validacionNumeros(char[]);
