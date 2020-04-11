@@ -11,9 +11,13 @@ int validacionNumeros(char* operando)
      for (i=0;i<lenght;i++)
     {
 
-              if(isdigit(operando[i])==0) //SI ES 0 ES UN DIGITO INVALIDO (NO ES NUMERO)
+
+
+              if(isdigit(operando[i])==0 || isspace(operando[i]!=0)) //SI ES 0 ES UN DIGITO INVALIDO (NO ES NUMERO)
             {
                 if(operando[i]!='.')
+                    return 1;
+                if(i==0)
                     return 1;
             }
 

@@ -31,6 +31,7 @@ int main()
     float segundoOperando;
     char numeroMenuX[10]="X";
     char numeroMenuY[10]="Y";
+    char respuesta[2];
     float resultadoSuma;
     float resultadoResta;
     float resultadoMultiplicacion;
@@ -63,40 +64,43 @@ int main()
             case 1:
 
                  printf("Ingrese el primer operando: ");
-                 scanf("%s",&numeroMenuX);
+                 fflush(stdin);
+                 gets(numeroMenuX);
 
 
                  while(validacionNumeros(numeroMenuX)==1)
                  {
                      printf("Numero no valido!!, Ingrese otro numero: ");
-                     scanf("%c",& numeroMenuX);
+                     fflush(stdin);
+                     gets(numeroMenuX);
                      validacionNumeros(numeroMenuX);
                  }
 
                 primerOperando=atof(numeroMenuX);
 
 
+            system("cls");
 
-                system("cls");
 
             break;
             case 2:
-                printf("Ingrese el segundo operando: ");
-                scanf("%f",& segundoOperando);
 
-/*                while(validacionNumeros(segundoOperando)==1)
-                {
-                    printf("Numero no valido!!, Ingrese otro numero: ");
-                    scanf("%f",& segundoOperando);
-                    validacionNumeros(segundoOperando);
-                }*/
+                 printf("Ingrese el segundo operando: ");
+                 fflush(stdin);
+                 gets(numeroMenuY);
 
-                 if ((esEntero(segundoOperando)) == 0)
-                    sprintf(numeroMenuY,"%.0f", segundoOperando);
-                else
-                    sprintf(numeroMenuY,"%.2f", segundoOperando);
-                system("cls");
+                 while(validacionNumeros(numeroMenuY)==1)
+                 {
+                     printf("Numero no valido!!, Ingrese otro numero: ");
+                     fflush(stdin);
+                     gets(numeroMenuY);
+                     validacionNumeros(numeroMenuY);
+                 }
+
+                segundoOperando=atof(numeroMenuY);
+            system("cls");
             break;
+
             case 3:
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
 
@@ -108,6 +112,7 @@ int main()
                 system("pause");
                 system("cls");
             break;
+
             case 4:
                 resultadoResta=restarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoResta)) == 0)
@@ -117,6 +122,7 @@ int main()
                 system("pause");
                 system("cls");
             break;
+
             case 5:
                 resultadoDivision=dividirNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoDivision)) == 0)
@@ -126,6 +132,7 @@ int main()
                 system("pause");
                 system("cls");
             break;
+
             case 6:
                 resultadoMultiplicacion=multiplicarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoMultiplicacion)) == 0)
@@ -135,6 +142,7 @@ int main()
                 system("pause");
                 system("cls");
             break;
+
             case 7:
                 auxFactorial=(int)primerOperando;
                 resultadoFactorial=factorialNumero(primerOperando);
@@ -142,6 +150,7 @@ int main()
                 system("pause");
                 system("cls");
             break;
+
             case 8:
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoSuma)) == 0)
@@ -168,12 +177,23 @@ int main()
                     printf("El resultado de la multiplicacion es: %.2f\n", resultadoMultiplicacion);
 
                 resultadoFactorial=factorialNumero(primerOperando);
+                printf("El resultado de el factorial: %llu\n", resultadoFactorial);
                 system("pause");
                 system("cls");
 
             break;
             case 9:
                 printf("Gracias por haber usado esta calculadora!.");
+            break;
+            default:
+                while(opcion<0||opcion>9)
+                {
+                    printf("Ingreso una opcion no valida.");
+                    printf("\n\¿Desea continuar?");
+                    printf("\n\n¿SI O NO?");
+                    gets(respuesta);
+                    system("cls");
+                }
             break;
         }
 
