@@ -31,7 +31,7 @@ int main()
     float segundoOperando;
     char numeroMenuX[10]="X";
     char numeroMenuY[10]="Y";
-    char respuesta[2];
+    char respuesta[1];
     float resultadoSuma;
     float resultadoResta;
     float resultadoMultiplicacion;
@@ -43,21 +43,7 @@ int main()
 
     do
     {
-        printf("BIENVENIDOS A LA CALCULADORA!!\n\n");
-        printf("1. Ingresar 1er operando (A=%s)",numeroMenuX);
-        printf("\n2. Ingresar 2do operando (B=%s)", numeroMenuY);
-        printf("\n3. Calcular la suma (A+B)");
-        printf("\n4. Calcular la resta (A-B)");
-        printf("\n5. Calcular la division (A/B)");
-        printf("\n6. Calcular la multiplicacion (A*B)");
-        printf("\n7. Calcular el factorial (A!)");
-        printf("\n8. Calcular todas las operaciones");
-        printf("\n9. Salir");
-
-        printf("\n\nOpcion elegida:");
-        scanf("%d",& opcion);
-        system("cls");
-        //system ("pause");
+        opcion=mostrarMenu(numeroMenuX,numeroMenuY);
 
         switch(opcion)
         {
@@ -188,10 +174,16 @@ int main()
             default:
                 while(opcion<0||opcion>9)
                 {
-                    printf("Ingreso una opcion no valida.");
-                    printf("\n\¿Desea continuar?");
-                    printf("\n\n¿SI O NO?");
-                    gets(respuesta);
+                    printf("Ingreso una opcion no valida.\n");
+                    printf(" ¿Desea continuar?");
+                    printf("\n\n ¿S o N?: ");
+                    fflush(stdin);
+                    scanf("%c",&respuesta);
+                    toupper(respuesta);
+                    if (respuesta=='S')
+                        break;
+                    else
+                        opcion=9;
                     system("cls");
                 }
             break;

@@ -52,3 +52,5 @@ int esEntero(float);
  *
  */
 unsigned long long int factorialNumero(int);
+
+int mostrarMenu(char[] ,char[]);

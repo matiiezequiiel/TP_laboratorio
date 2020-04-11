@@ -99,3 +99,25 @@ unsigned long long int factorialNumero(int primerOperando)
 
     return resultado;
 }
+int mostrarMenu(char* numeroMenuX ,char* numeroMenuY )
+{
+
+        int opcion;
+
+        printf("BIENVENIDOS A LA CALCULADORA!!\n\n");
+        printf("1. Ingresar 1er operando (A=%s)",numeroMenuX);
+        printf("\n2. Ingresar 2do operando (B=%s)", numeroMenuY);
+        printf("\n3. Calcular la suma (A+B)");
+        printf("\n4. Calcular la resta (A-B)");
+        printf("\n5. Calcular la division (A/B)");
+        printf("\n6. Calcular la multiplicacion (A*B)");
+        printf("\n7. Calcular el factorial (A!)");
+        printf("\n8. Calcular todas las operaciones");
+        printf("\n9. Salir");
+
+        printf("\n\nOpcion elegida:");
+        scanf("%d",& opcion);
+        system("cls");
+        return opcion;
+
+}
