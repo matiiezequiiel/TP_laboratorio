@@ -31,7 +31,7 @@ int main()
     float segundoOperando;
     char numeroMenuX[10]="X";
     char numeroMenuY[10]="Y";
-    char respuesta[1];
+    char respuesta=' ';
     float resultadoSuma;
     float resultadoResta;
     float resultadoMultiplicacion;
@@ -88,6 +88,15 @@ int main()
             break;
 
             case 3:
+                if(numeroMenuX[0]=='X'||numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue con opcion 1 u opcion 2 ambos operandos para continuar.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
+
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
 
                 if ((esEntero(resultadoSuma)) == 0)
@@ -100,7 +109,17 @@ int main()
             break;
 
             case 4:
+                if(numeroMenuX[0]=='X'||numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue con opcion 1 u opcion 2 ambos operandos para continuar.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
+
                 resultadoResta=restarNumeros(primerOperando,segundoOperando);
+
                 if ((esEntero(resultadoResta)) == 0)
                     printf("El resultado de la resta es: %.0f\n", resultadoResta);
                 else
@@ -110,7 +129,17 @@ int main()
             break;
 
             case 5:
+                if(numeroMenuX[0]=='X'||numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue con opcion 1 u opcion 2 ambos operandos para continuar.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
+
                 resultadoDivision=dividirNumeros(primerOperando,segundoOperando);
+
                 if ((esEntero(resultadoDivision)) == 0)
                     printf("El resultado de la division es: %.0f\n", resultadoDivision);
                 else
@@ -120,7 +149,17 @@ int main()
             break;
 
             case 6:
+                if(numeroMenuX[0]=='X'||numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue con opcion 1 u opcion 2 ambos operandos para continuar.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
+
                 resultadoMultiplicacion=multiplicarNumeros(primerOperando,segundoOperando);
+
                 if ((esEntero(resultadoMultiplicacion)) == 0)
                     printf("El resultado de la multiplicacion es: %.0f\n", resultadoMultiplicacion);
                 else
@@ -130,6 +169,14 @@ int main()
             break;
 
             case 7:
+                if(numeroMenuX[0]=='X'&& numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue en el operando 1 el numero a calcular.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
                 auxFactorial=(int)primerOperando;
                 resultadoFactorial=factorialNumero(primerOperando);
                 printf("El resultado de el factorial: %llu\n", resultadoFactorial);
@@ -138,6 +185,15 @@ int main()
             break;
 
             case 8:
+                if(numeroMenuX[0]=='X'||numeroMenuY[0]=='Y')
+                {
+                    printf("Alguno de los operandos no fueron cargados.\n\n");
+                    printf("Cargue con opcion 1 u opcion 2 ambos operandos para continuar.\n\n");
+                    system("pause");
+                    system("cls");
+                    continue;
+                }
+
                 resultadoSuma=sumarNumeros(primerOperando,segundoOperando);
                 if ((esEntero(resultadoSuma)) == 0)
                     printf("El resultado de la suma es: %.0f\n", resultadoSuma);
@@ -172,22 +228,24 @@ int main()
                 printf("Gracias por haber usado esta calculadora!.");
             break;
             default:
-                while(opcion<0||opcion>9)
+
+                printf("Ingreso una opcion no valida.\n");
+                printf("¿Desea continuar?");
+                printf("\n\n ¿S o N?: ");
+                fflush(stdin);
+                scanf("%c",&respuesta);
+                if (toupper(respuesta)=='S')
                 {
-                    printf("Ingreso una opcion no valida.\n");
-                    printf(" ¿Desea continuar?");
-                    printf("\n\n ¿S o N?: ");
-                    fflush(stdin);
-                    scanf("%c",&respuesta);
-                    toupper(respuesta);
-                    if (respuesta=='S')
-                        break;
-                    else
-                        opcion=9;
-                    system("cls");
+                     system("cls");
+                     continue;
                 }
+                else
+                 {
+                    opcion=9;
+                    printf("\n\nGracias por haber usado esta calculadora!.");
+                 }
             break;
-        }
+       }
 
     }while(opcion!=9);
 

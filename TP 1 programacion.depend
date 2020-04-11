@@ -11,3 +11,27 @@
 
 1586574825 c:\users\matii\eclipse-workspace\tp 1 programacion\funciones.h
 
+1586636823 source:c:\users\matii\desktop\repositorios\tp\tp_laboratorio\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1586637282 source:c:\users\matii\desktop\repositorios\tp\tp_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1586636823 c:\users\matii\desktop\repositorios\tp\tp_laboratorio\funciones.h
+
+1586636823 source:c:\users\matii\desktop\repositorios\tp_laboratorio_1\tp_laboratorio\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+
+1586638738 source:c:\users\matii\desktop\repositorios\tp_laboratorio_1\tp_laboratorio\main.c
+	<stdio.h>
+	<stdlib.h>
+	"funciones.h"
+
+1586636823 c:\users\matii\desktop\repositorios\tp_laboratorio_1\tp_laboratorio\funciones.h
+
